@@ -1,18 +1,25 @@
-from functions import printMat, e, numR, inputD, hidden, output
+from functions import printMat, w, epsilon, numR, inputD, hidden, output
 
-weight = [[numR(), numR(), numR()], # 00 01 02
-          [numR(), numR(), numR()], # 10 11 12
-          [numR(), numR(), numR()]] # 20 21 22
+weight = w()
 
+def red(weight):
+    n1, n2 = 1, 1
+    inputD(n1, n2)
 
-n1, n2 = 1, 1
-inputD(n1, n2)
+    n = hidden(weight, n1, n2)
 
-tup = hidden(weight, n1, n2)
+    n3 = n[0]
+    n4 = n[1]
+    n5 = n[2] 
 
-n3 = tup[0]
-n4 = tup[1]
-n5 = tup[2]
+    n6 = output(weight, n3, n4, n5)
+    return n6
 
-n6 = output(weight, n3, n4, n5)
+original = red(weight)
 
+weight = epsilon(weight)
+
+segunda = red(weight)
+
+if segunda < original:
+    print(f"Se redujo de {original} a {segunda}")

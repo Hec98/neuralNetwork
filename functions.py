@@ -1,5 +1,9 @@
 import math
 from random import random
+import sys
+
+epsi = sys.float_info.epsilon
+print(epsi)
 
 def printMat(mat):
     for m in mat:
@@ -9,6 +13,26 @@ def printMat(mat):
 e = lambda val: 1/(1 + math.pow(math.e, -1 * val))
 
 numR = lambda: math.cos(random())
+
+def w():      
+    weight = [[numR(), numR(), numR()],           
+              [numR(), numR(), numR()],           
+              [numR(), numR(), numR()]]           
+    return weight
+
+def epsilon(weight):
+    weight[0][0] -= epsi*20
+    weight[0][1] -= epsi*20
+    weight[0][2] -= epsi*20
+
+    weight[1][0] -= epsi*20
+    weight[1][1] -= epsi*20
+    weight[1][2] -= epsi*20
+
+    weight[2][0] -= epsi*20
+    weight[2][1] -= epsi*20
+    weight[2][2] -= epsi*20
+    return weight
 
 def inputD(n1, n2):
     print("Input\n")
