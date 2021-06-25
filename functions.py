@@ -11,8 +11,9 @@ def printMat(mat):
     print()
     
 e = lambda val: 1/(1 + math.pow(math.e, -1 * val))
+# -1 y 1
 
-numR = lambda: math.cos(random())
+numR = lambda: math.cos(random()) / 5
 
 def w():      
     weight = [[numR(), numR(), numR()],           
@@ -20,6 +21,7 @@ def w():
               [numR(), numR(), numR()]]           
     return weight
 
+# Peso por peso
 def epsilon(weight):
     weight[0][0] -= epsi*20
     weight[0][1] -= epsi*20
@@ -40,6 +42,8 @@ def inputD(n1, n2):
 
 def hidden(weight, n1, n2):
     print("Hidden\n")     
+    print('Weight\n')
+    printMat(weight)
                       
     mat = [[weight[0][0] * n1, weight[0][1] * n2], 
            [weight[0][2] * n1, weight[1][0] * n2], 
