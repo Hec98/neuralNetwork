@@ -18,4 +18,3 @@ for y in neurons:
 
 printMat(data, 'Datos')
 printMat(weights, 'Pesos')
-printMat(neurons)
