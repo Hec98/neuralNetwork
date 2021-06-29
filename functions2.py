@@ -3,9 +3,12 @@ from random import random
 
 numR = lambda: cos(random())
 
-def printMat(mat):
-    for m in mat: print(f"{m}")
-    print()
+def printMat(mat, tex = ''):
+    print(f'\n {tex}')
+    for m in mat: 
+        p = ''
+        for n in m: p += f' {n} '
+        print(f"{p}")
 
 def validateN(n):
     try:
@@ -15,7 +18,10 @@ def validateN(n):
         print('Dato no valido')
         exit()
 
-def addData(n):
+def addData(n, n2 = 0):
     data = []
-    for x in range(0, n, 1): data.append(x)
+    count = 0
+    while count < n:
+        data.append(n2)
+        count += 1
     return data

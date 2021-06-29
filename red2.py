@@ -1,9 +1,9 @@
-from functions2 import printMat, validateN, addData
+from functions2 import printMat, validateN, addData, numR
 
 nHidden = input('Ingresa el número de capas ocultas -> ')
 nHidden = validateN(nHidden)
 
-neurons, data = [], []
+neurons, data, weights = [], [], []
 
 for x in range(0, nHidden, 1):
    neuron = input(f'Ingrese el número de neuronas de la capa {x+1} -> ')
@@ -12,7 +12,10 @@ for x in range(0, nHidden, 1):
 
 print(f'\nCapas Oculta\n{neurons}')
 
-for y in neurons: data.append(addData(y))
+for y in neurons: 
+    data.append(addData(y))
+    weights.append(addData(y, numR()))
 
-print('\nDatos')
-printMat(data)
+printMat(data, 'Datos')
+printMat(weights, 'Pesos')
+printMat(neurons)
